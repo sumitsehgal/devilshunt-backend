@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resources([
+    'posts' => 'PostController'
+]);
+
+
+Route::any('/tus/{any?}', function () {
+    $response = app('tus-server')->serve();
+
+    return $response->send();
+})->where('any', '.*');
