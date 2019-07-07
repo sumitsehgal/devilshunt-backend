@@ -23,7 +23,7 @@ Route::resources([
     'posts' => 'PostController'
 ]);
 
-Route::post('join-us', 'JoinUsController@store');
+Route::post('/join-us', 'JoinUsController@store');
 
 Route::get('thankyou', 'JoinUsController@thankyou')->name('thankyou');
 
