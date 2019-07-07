@@ -23,6 +23,9 @@ Route::resources([
     'posts' => 'PostController'
 ]);
 
+Route::post('join-us', 'JoinUsController@store');
+
+Route::get('thankyou', 'JoinUsController@thankyou')->name('thankyou');
 
 Route::any('/tus/{any?}', function () {
     $response = app('tus-server')->serve();
