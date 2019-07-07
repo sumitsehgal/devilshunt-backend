@@ -16,19 +16,19 @@ class CreateJoinUsTable extends Migration
         Schema::create('join_us', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('gender');
+            $table->string('gender')->default('male');
             $table->string('email');
-            $table->string('language');
-            $table->date('dob');
-            $table->string('qualification');
-            $table->string('martial');
-            $table->string('dance_category');
-            $table->string('song_performing');
-            $table->string('wpnumber');
-            $table->string('height');
-            $table->string('age_group');
-            $table->string('address');
-            $table->string('how_you_know');
+            $table->string('language')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('qualification')->nullable();
+            $table->string('martial')->default('single');
+            $table->string('dance_category')->nullable();
+            $table->string('song_performing')->nullable();
+            $table->string('wpnumber')->nullable();
+            $table->string('height')->nullable();
+            $table->string('age_group')->nullable();
+            $table->string('address')->nullable();
+            $table->string('how_you_know')->nullable();
             $table->timestamps();
         });
     }
